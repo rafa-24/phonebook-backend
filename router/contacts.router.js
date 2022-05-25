@@ -38,7 +38,7 @@ router.delete('/:id', (req, res) => {
 router.put('/:id', (req, res) => {
     const id = Number(req.params.id)
     const data = req.body
-    const response = contactsController.editContact(id, data)
+    const response = contactsController.editContact(data, id)
     res.status(201).json(response)
 })
 

@@ -43,9 +43,9 @@ const getContact = (id) => {
 const addContact = (data) => {
 
     const newObject = {
-        id: contactsDB[contactsDB - 1].id + 1,
-        name: item.name,
-        number: item.number
+        id: contactsDB[contactsDB.length - 1].id + 1,
+        name: data.name,
+        number: data.number
     }
 
     contactsDB.push(newObject)
@@ -63,7 +63,6 @@ const editContact = (data, id) => {
     const contact = contactsDB.findIndex((index) => index.id === id)
     // manejar el error del indice
     if (contact !== -1) {
-
         contactsDB[contact] = {
             id: data.id,
             name: data.name,
